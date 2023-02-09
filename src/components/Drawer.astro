@@ -1,0 +1,43 @@
+---
+import Divider from './Divider.astro';
+---
+
+<nav class="drawer">
+  <div class="drawer-header">
+    <a class="drawer-header__logo" href="/">E</a>
+    <p class="drawer-header__text">Example UI</p>
+  </div>
+  <Divider />
+  <div class="drawer-body"></div>
+</nav>
+
+<style>
+  .drawer {
+    width: var(--drawer-width);
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #eee;
+  }
+  .drawer-header {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .drawer-header__logo {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-flex;
+    line-height: 1;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #eee;
+  }
+  .drawer-header__text {
+    margin: 0;
+    color: #555;
+  }
+</style>
