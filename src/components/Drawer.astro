@@ -1,5 +1,9 @@
 ---
 import Divider from './Divider.astro';
+
+function isActive(path: string) {
+  return Astro.url.pathname === path;
+}
 ---
 
 <nav class="drawer">
@@ -8,7 +12,43 @@ import Divider from './Divider.astro';
     <p class="drawer-header__text">Example UI</p>
   </div>
   <Divider />
-  <div class="drawer-body"></div>
+  <div class="drawer-body">
+    <p class="drawer-body__text">NO JS</p>
+    <a
+      class={`drawer-body__link ${isActive('/components/menu') && '-active'}`}
+      href="/components/menu"
+    >
+      Menu
+    </a>
+    <a
+      class={`drawer-body__link ${isActive('/components/dialog') && '-active'}`}
+      href="/components/dialog"
+    >
+      Dialog
+    </a>
+    <a
+      class={`drawer-body__link ${
+        isActive('/components/scroll-to-top') && '-active'
+      }`}
+      href="/components/scroll-to-top"
+    >
+      Scroll to top
+    </a>
+    <a
+      class={`drawer-body__link ${isActive('/components/slide') && '-active'}`}
+      href="/components/slide"
+    >
+      Slide
+    </a>
+    <a
+      class={`drawer-body__link ${
+        isActive('/components/accordion') && '-active'
+      }`}
+      href="/components/accordion"
+    >
+      Accordion
+    </a>
+  </div>
 </nav>
 
 <style>
@@ -39,5 +79,36 @@ import Divider from './Divider.astro';
   .drawer-header__text {
     margin: 0;
     color: #555;
+  }
+  .drawer-body {
+    padding: 8px;
+  }
+  .drawer-body__text {
+    margin: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: #555;
+    padding-left: 16px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .drawer-body__link {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 16px;
+    display: inline-flex;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .drawer-body__link.-active {
+    color: rgb(0, 114, 229);
+    background-color: rgb(240, 247, 255);
+  }
+  .drawer-body__link.-active:hover {
+    color: rgb(4, 71, 138);
+    background-color: rgb(226, 241, 255);
+  }
+  .drawer-body__link:hover {
+    background-color: #eee;
   }
 </style>
