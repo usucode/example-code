@@ -1,0 +1,67 @@
+<div class="callapsel">
+  <img
+    id="image1"
+    class="callapsel__image"
+    src="/images/alex-gruber-9f55wJpnCwY-unsplash.jpg"
+    alt="イメージ"
+    width={300}
+    height={300}
+  />
+  <img
+    id="image2"
+    class="callapsel__image"
+    src="/images/liana-mikah-L5cEmk3ucYY-unsplash.jpg"
+    alt="イメージ"
+    width={300}
+    height={300}
+  />
+  <img
+    id="image3"
+    class="callapsel__image"
+    src="/images/mike-meyers-vyFA3R96RA4-unsplash.jpg"
+    alt="イメージ"
+    width={300}
+    height={300}
+  />
+</div>
+<ul class="callapsel-pager">
+  <li><a class="callapsel-pager__item" href="#image1">1</a></li>
+  <li><a class="callapsel-pager__item" href="#image2">2</a></li>
+  <li><a class="callapsel-pager__item" href="#image3">3</a></li>
+</ul>
+
+<style>
+  .callapsel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    width: 300px;
+  }
+  .callapsel__image {
+    object-fit: cover;
+    scroll-snap-align: start;
+  }
+  .callapsel-pager {
+    list-style: none;
+    margin-top: 16px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    width: 300px;
+    justify-content: center;
+  }
+  .callapsel-pager__item {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

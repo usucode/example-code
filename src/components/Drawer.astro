@@ -1,8 +1,8 @@
 ---
-import Divider from './Divider.astro';
+import Divider from './Divider.astro'
 
 function isActive(path: string) {
-  return Astro.url.pathname === path;
+  return Astro.url.pathname === path
 }
 ---
 
@@ -28,17 +28,11 @@ function isActive(path: string) {
     </a>
     <a
       class={`drawer-body__link ${
-        isActive('/components/scroll-to-top') && '-active'
+        isActive('/components/collapsel') && '-active'
       }`}
-      href="/components/scroll-to-top"
+      href="/components/collapsel"
     >
-      Scroll to top
-    </a>
-    <a
-      class={`drawer-body__link ${isActive('/components/collapse') && '-active'}`}
-      href="/components/collapse"
-    >
-      Collapse
+      Collapsel
     </a>
     <a
       class={`drawer-body__link ${
